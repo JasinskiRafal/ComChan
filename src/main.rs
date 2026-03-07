@@ -935,6 +935,7 @@ fn run_normal_mode(
                     )?;
                     writer.flush()?;
                 }
+                running.store(false, std::sync::atomic::Ordering::SeqCst);
             }
         }
 
